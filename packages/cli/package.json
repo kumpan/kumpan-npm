@@ -1,0 +1,34 @@
+{
+  "name": "@kumpan/cli",
+  "version": "0.0.1",
+  "description": "CLI for extracting source code from other @kumpan packages",
+  "homepage": "https://kumpan.se",
+  "bin": {
+    "kumpan": "./bin/kumpan.js",
+    "kumpan-completer": "./bin/kumpan-completer.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kumpan/@kumpan-npm",
+    "directory": "packages/cli"
+  },
+  "bugs": {
+    "url": "https://github.com/kumpan/@kumpan-npm/issues"
+  },
+  "author": "David Lundholm <david@kumpan.se> (https://github.com/kumpan-david)",
+  "license": "UNLICENCED",
+  "dependencies": {
+    "@commander-js/extra-typings": "^13.1.0",
+    "@types/tabtab": "^3.0.4",
+    "commander": "^13.1.0",
+    "ejs": "^3.1.9",
+    "esbuild": "^0.25.2",
+    "tabtab": "^3.0.2"
+  },
+  "devDependencies": {
+    "@types/ejs": "^3.1.4",
+    "tsx": "^4.19.3",
+    "type-fest": "^4.38.0",
+    "vitest": "^3.1.1"
+  }
+}
