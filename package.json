@@ -1,0 +1,14 @@
+{
+	"name": "@kumpan",
+	"version": "0.0.1",
+	"description": "",
+	"scripts": {},
+	"keywords": [],
+	"author": "David Lundholm <david@kumpan.se> (https://github.com/kumpan-david)",
+	"license": "UNLICENSED",
+	"packageManager": "pnpm@10.7.0",
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.4",
+		"typescript": "^5.8.2"
+	}
+}
