@@ -1,14 +1,24 @@
 import type { Scope } from "./types";
 
+const { log, error, warn } = console;
+
 export const printAvailableItems = (scope: Scope) => {
   const itemNames = scope.items.map((item) => item.name);
-  console.log(`Available ${scope.name}s`, itemNames);
+  log(`Available ${scope.name}s`, itemNames);
+};
+
+export const printAvailableScopes = (scopes: Scope[]) => {
+  if (!scopes.length) {
+    log("No available scopes");
+  } else {
+    log("Available scopes: ", scopes.map((s) => s.name).join(", "));
+  }
 };
 
 export const printWarning = (...msgs: string[]) => {
-  console.warn(`Warning: ${msgs.join(", ")}`);
+  warn(`Warning: ${msgs.join(", ")}`);
 };
 
 export const printError = (...msgs: string[]) => {
-  console.error(`Error: ${msgs.join(", ")}`);
+  error(`Error: ${msgs.join(", ")}`);
 };

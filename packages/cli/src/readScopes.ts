@@ -1,6 +1,5 @@
 import fs from "node:fs";
 import { join } from "node:path";
-import { singular } from "pluralize";
 import type { Scope, ScopePackageJson } from "./types";
 import { printError } from "./ui";
 import { exists } from "./utils/fs";
@@ -11,7 +10,7 @@ export const readScopes = (scopesDir: string): Scope[] => {
     const items = readScopeItems(scopePath);
 
     return {
-      name: singular(scope),
+      name: scope,
       path: scopePath,
       items,
     };

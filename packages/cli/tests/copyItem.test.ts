@@ -68,7 +68,11 @@ describe("copyItem", () => {
   });
 
   it("copies files defined in the package.json from the source directory", () => {
-    const item = { name: "test", path: "/test", package: { files: ["one.test", "two.test"] } };
+    const item = {
+      name: "test",
+      path: "/test",
+      package: { name: "one", files: ["one.test", "two.test"] },
+    };
     createSourceItem(item);
 
     const targetPath = "/target";
@@ -83,7 +87,7 @@ describe("copyItem", () => {
     const item = {
       name: "source",
       path: "/source",
-      package: { files: ["one.test", "foo/two.test", "bar/three.test"] },
+      package: { name: "one", files: ["one.test", "foo/two.test", "bar/three.test"] },
     };
     createSourceItem(item);
 
@@ -100,7 +104,7 @@ describe("copyItem", () => {
     const item = {
       name: "source",
       path: "/source",
-      package: { files: ["one.test", "foo"] },
+      package: { name: "one", files: ["one.test", "foo"] },
     };
     createSourceItem(item);
     createSourceItem({ name: "two.test", path: "/source/foo/two.test" });
