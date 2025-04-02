@@ -4,11 +4,11 @@
   "description": "CLI for extracting source code from other @kumpan packages",
   "homepage": "https://kumpan.se",
   "scripts": {
-    "test": "vitest"
+    "test": "vitest",
+    "bundle": "tsx bundle.ts"
   },
   "bin": {
-    "kumpan": "./bin/kumpan.js",
-    "kumpan-completer": "./bin/kumpan-completer.js"
+    "kumpan": "./bin/kumpan.js"
   },
   "repository": {
     "type": "git",
@@ -21,15 +21,14 @@
   "author": "David Lundholm <david@kumpan.se> (https://github.com/kumpan-david)",
   "license": "UNLICENCED",
   "dependencies": {
-    "@commander-js/extra-typings": "^13.1.0",
-    "@types/tabtab": "^3.0.4",
     "commander": "^13.1.0",
-    "ejs": "^3.1.9",
-    "esbuild": "^0.25.2",
     "pluralize": "^8.0.0",
     "tabtab": "^3.0.2"
   },
   "devDependencies": {
+    "@commander-js/extra-typings": "^13.1.0",
+    "@types/tabtab": "^3.0.4",
+    "esbuild": "^0.25.2",
     "@types/ejs": "^3.1.4",
     "@types/pluralize": "^0.0.33",
     "memfs": "^4.17.0",
