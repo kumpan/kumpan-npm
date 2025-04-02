@@ -6,8 +6,10 @@ export type Scope = {
   items: ScopeItem[];
 };
 
+export type ScopePackageJson = Omit<PackageJson, "name"> & { name: string };
+
 export type ScopeItem = {
   name: string;
   path: string;
-  package?: PackageJson;
+  package?: ScopePackageJson;
 };
