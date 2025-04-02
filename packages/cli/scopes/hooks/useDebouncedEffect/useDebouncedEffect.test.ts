@@ -22,7 +22,9 @@ describe("useDebouncedEffect", () => {
         }
       }, [counter]);
 
-      useDebouncedEffect(debouncedEffect, [counter], { delay: debouncedEffectDelay });
+      useDebouncedEffect(() => debouncedEffect(counter), [counter], {
+        delay: debouncedEffectDelay,
+      });
 
       return counter;
     });

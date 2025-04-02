@@ -34,6 +34,9 @@
     "memfs": "^4.17.0",
     "tsx": "^4.19.3",
     "type-fest": "^4.38.0",
-    "vitest": "^3.1.1"
+    "vitest": "^3.1.1",
+    "@vitejs/plugin-react-swc": "^3.8.1",
+    "jsdom": "^26.0.0",
+    "@testing-library/react": "^16.2.0"
   }
 }
