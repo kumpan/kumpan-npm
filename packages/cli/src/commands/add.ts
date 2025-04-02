@@ -14,6 +14,7 @@ export const buildAddCommand = (scopes: Scope[]) => {
         .addArgument(new Argument("[item]").choices(itemNames))
         .argument("[path]")
         .option("-l, --list", `List available ${scope}`)
+        .usage("<scope> [item] [path]")
         .action((itemName, path, opts) => {
           const item = itemName ? scope.items.find((item) => item.name === itemName) : null;
           if (opts.list) {
@@ -21,7 +22,7 @@ export const buildAddCommand = (scopes: Scope[]) => {
           } else if (item && path) {
             copyItem(item, path);
           } else {
-            throw new Error("fuck");
+            UI.printError(`${scope.name} ${itemName} not found`);
           }
         }),
     );
