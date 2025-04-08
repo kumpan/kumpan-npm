@@ -1,0 +1,8 @@
+src
+tests
+*.test.*
+bundle.ts
+tsconfig.*
+vitest.workspace.ts
+node_modules
+*.tgz
