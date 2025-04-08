@@ -21,6 +21,8 @@ export const buildAddCommand = (scopes: Scope[]) => {
             UI.printAvailableItems(scope);
           } else if (item && path) {
             copyItem(item, path);
+          } else if (!itemName) {
+            UI.printAvailableItems(scope);
           } else {
             UI.printError(`${scope.name} ${itemName} not found`);
           }
