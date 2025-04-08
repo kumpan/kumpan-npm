@@ -17,7 +17,8 @@ export const copyItem = (item: ScopeItem, destination: string) => {
     const targetPath = join(destination, item.name);
     copyMultipleFiles(item.path, sourcePaths, targetPath);
   } else if (firstFile) {
-    copySingleFile(firstFile, destination);
+    const targetPath = join(item.path, firstFile);
+    copySingleFile(targetPath, destination);
   } else {
     console.error("No files specified in package.json", item.name);
   }
@@ -49,7 +50,6 @@ const copySingleFile = (path: string, destination: string) => {
   if (!dirExists(dest)) {
     mkdirs(dest);
   }
-
   fs.copyFileSync(path, dest);
 };
 
