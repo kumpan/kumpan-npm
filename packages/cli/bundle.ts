@@ -2,11 +2,11 @@ import * as esbuild from "esbuild";
 
 esbuild
   .build({
-    entryPoints: ["src/index.ts"],
+    entryPoints: ["src/main.ts"],
     target: "node20.10.0",
     platform: "node",
     bundle: true,
-    packages: "bundle",
+    packages: "external",
     format: "cjs",
     outfile: "./bin/kumpan",
     tsconfig: "./tsconfig.build.json",
