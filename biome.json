@@ -29,6 +29,9 @@
             "hooks": [{ "name": "useDebouncedEffect", "closureIndex": 0, "dependenciesIndex": 1 }]
           }
         }
+      },
+      "style": {
+        "noArguments": "off"
       }
     }
   },
