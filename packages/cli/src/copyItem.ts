@@ -9,7 +9,7 @@ export const copyItem = (item: ScopeItem, destination: string) => {
     return copySingleFile(item.path, destination);
   }
 
-  const files = parsePackageFiles(item);
+  const files = listItemFiles(item);
   const [firstFile] = files;
 
   if (files.length > 1) {
@@ -24,7 +24,7 @@ export const copyItem = (item: ScopeItem, destination: string) => {
   }
 };
 
-const parsePackageFiles = (item: ScopeItem) => {
+export const listItemFiles = (item: ScopeItem) => {
   return (
     item.package?.files?.flatMap((entry) => {
       const entrypath = join(item.path, entry);
