@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import { basename, extname, join, resolve } from "node:path";
 import type { ScopeItem } from "./types";
-import { printWarning } from "./ui";
+import { printError, printWarning } from "./ui";
 import { dirExists, exists, isDirectory, mkdirs } from "./utils/fs";
 
 export const copyItem = (item: ScopeItem, destination: string) => {
@@ -9,7 +9,7 @@ export const copyItem = (item: ScopeItem, destination: string) => {
     return copySingleFile(item.path, destination);
   }
 
-  const files = listItemFiles(item);
+  const files = listPackageFiles(item);
   const [firstFile] = files;
 
   if (files.length > 1) {
@@ -20,11 +20,11 @@ export const copyItem = (item: ScopeItem, destination: string) => {
     const targetPath = join(item.path, firstFile);
     copySingleFile(targetPath, destination);
   } else {
-    console.error("No files specified in package.json", item.name);
+    printError("No files specified in package.json", item.name);
   }
 };
 
-export const listItemFiles = (item: ScopeItem) => {
+export const listPackageFiles = (item: ScopeItem) => {
   return (
     item.package?.files?.flatMap((entry) => {
       const entrypath = join(item.path, entry);
@@ -60,7 +60,7 @@ const copyMultipleFiles = (root: string, paths: string[], destination: string) =
       mkdirs(dest);
     }
     if (exists(dest)) {
-      console.warn("File already exists. Skipping", sourceFile);
+      printWarning("File already exists. Skipping", sourceFile);
       continue;
     }
 
