@@ -1,11 +1,13 @@
 {
   "name": "@kumpan/cli",
   "version": "0.0.1",
+  "private": false,
   "description": "CLI for extracting source code from other @kumpan packages",
   "homepage": "https://kumpan.se",
   "scripts": {
     "test": "vitest",
     "bundle": "tsx bundle.ts",
+    "typecheck": "tsc --noEmit",
     "prepublish": "pnpm bundle && pnpm pack"
   },
   "bin": {
@@ -13,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kumpan/@kumpan-npm",
+    "url": "https://github.com/kumpan/kumpan-npm",
     "directory": "packages/cli"
   },
   "bugs": {
