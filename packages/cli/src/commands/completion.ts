@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import { join } from "node:path";
 import { Command } from "@commander-js/extra-typings";
-import * as UI from "../ui";
+import * as UI from "../lib/ui";
 import { exists, getKumpanConfigDir, getRootDir, mkdirs } from "../utils/fs";
 
 export const buildCompletionCommand = () => {

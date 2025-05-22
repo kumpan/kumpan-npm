@@ -1,6 +1,6 @@
 import readline from "node:readline/promises";
+import { getRootDir } from "../utils/fs";
 import type { Scope } from "./types";
-import { getRootDir } from "./utils/fs";
 
 const { log, error, warn } = console;
 

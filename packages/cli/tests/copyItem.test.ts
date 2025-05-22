@@ -1,8 +1,8 @@
 import { dirname, extname, join, resolve } from "node:path";
 import { fs, vol } from "memfs";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { copyItem } from "../src/copyItem";
-import type { ScopeItem } from "../src/types";
+import { copyItem } from "../src/lib/copyItem";
+import type { ScopeItem } from "../src/lib/types";
 
 vi.mock("node:fs", () => {
   return Object.assign(fs, { default: fs });

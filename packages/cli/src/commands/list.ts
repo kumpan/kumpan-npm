@@ -1,7 +1,7 @@
 import { Argument, Command } from "@commander-js/extra-typings";
 import pluralize from "pluralize";
-import type { Scope } from "../types";
-import * as UI from "../ui";
+import type { Scope } from "../lib/types";
+import * as UI from "../lib/ui";
 
 export const buildListCommand = (scopes: Scope[]) => {
   const scopeNamePluralized = scopes.map((scope) => pluralize(scope.name));

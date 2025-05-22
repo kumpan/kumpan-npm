@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
-import * as CopyMod from "../src/copyItem";
-import * as UI from "../src/ui";
+import * as CopyMod from "../src/lib/copyItem";
+import * as UI from "../src/lib/ui";
 
 import buildAddCommand from "../src/commands/add";
 

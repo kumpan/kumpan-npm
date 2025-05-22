@@ -1,7 +1,7 @@
 import { CommanderError } from "commander";
 import { describe, expect, it, vi } from "vitest";
 import buildListCommand from "../src/commands/list";
-import * as UI from "../src/ui";
+import * as UI from "../src/lib/ui";
 
 vi.mock("../src/ui");
 

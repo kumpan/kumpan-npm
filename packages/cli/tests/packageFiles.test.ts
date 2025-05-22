@@ -1,8 +1,8 @@
 import { join, resolve } from "node:path";
 import { singular } from "pluralize";
 import { describe, expect, test } from "vitest";
-import { listPackageFiles } from "../src/copyItem";
-import { readScopes } from "../src/readScopes";
+import { listPackageFiles } from "../src/lib/copyItem";
+import { readScopes } from "../src/lib/readScopes";
 import { exists } from "../src/utils/fs";
 
 describe("files of items", () => {

@@ -3,7 +3,7 @@ import buildAddCommand from "./commands/add";
 import buildListCommand from "./commands/list";
 
 import { buildCompletionCommand } from "./commands/completion";
-import type { Scope } from "./types";
+import type { Scope } from "./lib/types";
 
 export const createCLI = (scopes: Scope[]) => {
   const program = new Command();

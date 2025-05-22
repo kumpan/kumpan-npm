@@ -1,8 +1,8 @@
 import { Argument, Command } from "@commander-js/extra-typings";
 import { singular } from "pluralize";
-import { copyItem } from "../copyItem";
-import type { Scope } from "../types";
-import * as UI from "../ui";
+import { copyItem } from "../lib/copyItem";
+import type { Scope } from "../lib/types";
+import * as UI from "../lib/ui";
 
 export const buildAddCommand = (scopes: Scope[]) => {
   const command = new Command("add");

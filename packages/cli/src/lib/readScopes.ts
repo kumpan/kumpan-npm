@@ -1,8 +1,8 @@
 import fs from "node:fs";
 import { join } from "node:path";
+import { exists } from "../utils/fs";
 import type { Scope, ScopePackageJson } from "./types";
 import { printError } from "./ui";
-import { exists } from "./utils/fs";
 
 export const readScopes = (scopesDir: string): Scope[] => {
   return fs.readdirSync(scopesDir).map((scope) => {

@@ -1,8 +1,8 @@
 import { extname, join } from "node:path";
 import { fs, vol } from "memfs";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { readScopes } from "../src/readScopes";
-import type { Scope } from "../src/types";
+import { readScopes } from "../src/lib/readScopes";
+import type { Scope } from "../src/lib/types";
 import { mkdirs } from "../src/utils/fs";
 
 vi.mock("node:fs", () => {

@@ -1,8 +1,8 @@
 import fs from "node:fs";
 import { basename, extname, join, resolve } from "node:path";
+import { dirExists, exists, isDirectory, mkdirs } from "../utils/fs";
 import type { ScopeItem } from "./types";
 import { printError, printWarning } from "./ui";
-import { dirExists, exists, isDirectory, mkdirs } from "./utils/fs";
 
 export const copyItem = (item: ScopeItem, destination: string) => {
   if (!item.package) {
