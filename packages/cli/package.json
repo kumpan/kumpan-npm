@@ -1,6 +1,6 @@
 {
   "name": "@kumpan/cli",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": false,
   "description": "CLI for extracting source code from other @kumpan packages",
   "homepage": "https://kumpan.se",

@@ -2,7 +2,7 @@ src
 tests
 *.test.*
 bundle.ts
-tsconfig.*
+./tsconfig.*
 vitest.workspace.ts
 node_modules
 *.tgz
