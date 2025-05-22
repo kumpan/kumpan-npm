@@ -1,6 +1,8 @@
 import fs from "node:fs";
 import os from "node:os";
 import { dirname, extname, join, normalize, resolve } from "node:path";
+import type { ScopePackageJson } from "../lib/types";
+import { printError } from "../lib/ui";
 
 export const exists = (path: string) => fs.existsSync(path);
 export const dirExists = (path: string) => fs.existsSync(dirname(path));
@@ -24,4 +26,22 @@ export const getRootDir = () => {
 export const getKumpanConfigDir = () => {
   const configDir = process.env.XDG_CONFIG_HOME || os.homedir();
   return join(configDir, ".config", "kumpan");
+};
+
+export const readPackageJson = (path: string) => {
+  try {
+    const filecontents = fs.readFileSync(path, "utf8");
+    const pkg = JSON.parse(filecontents) as ScopePackageJson;
+
+    if (!pkg.name) {
+      printError(`package.json is missing name: ${path}`);
+      return null;
+    }
+    return pkg;
+  } catch (e) {
+    if (e instanceof SyntaxError) {
+      printError(`Invalid package.json: ${path}`);
+    }
+    return null;
+  }
 };

@@ -5,6 +5,7 @@
   "description": "CLI for extracting source code from other @kumpan packages",
   "homepage": "https://kumpan.se",
   "scripts": {
+    "kumpan:dev": "tsx ./src/main.ts",
     "test": "vitest",
     "bundle": "tsx bundle.ts",
     "typecheck": "tsc --noEmit",
@@ -26,11 +27,13 @@
   "dependencies": {
     "@commander-js/extra-typings": "^13.1.0",
     "commander": "^13.1.0",
-    "pluralize": "^8.0.0"
+    "pluralize": "^8.0.0",
+    "semver": "^7.7.2"
   },
   "devDependencies": {
     "@testing-library/react": "^16.2.0",
     "@types/pluralize": "^0.0.33",
+    "@types/semver": "^7.7.0",
     "@vitejs/plugin-react-swc": "^3.8.1",
     "esbuild": "^0.25.2",
     "jsdom": "^26.0.0",
